@@ -1,0 +1,35 @@
+1) We are covering Distributed and In-memory cache in this project. 
+
+2) The data like User session it makes a lot of sense to cache it in distributed cache. Beacuse Asp.Net core web 
+   applications are scaled horizontally. That means there will be multiple containers and or multiple servers. A request to a particular
+   container or server is not known. That means a session created in one container might end up in getting a call in another container. 
+
+3) So it is always best practise to cache these type of data in the Distributed cache. 
+
+4) The data which are immutable and do not change very often and are small can be cached in-memory. 
+
+5) Disadvantage of In-memeory cache: 
+		It takes up the memory 
+
+6) Sticky Session: A call always goes to the same server but not any other server. We need to avoid sticky sessions. In-memory cache will work
+				fine in sticky sessions. 
+
+
+7) Distributed cache examples:
+	1) Redis Cache
+	2) Memecached
+
+8) In-Memory cache stays in the same server as the application and it eats up the data. 
+
+9) A cache is good if the data does not change too often.
+
+10) There are two options to maintian the cache expiry in the In-memory cache
+	Both can be added as the propeorties of the MemoryCacheEntryOptions. They are:
+	a) SlidingExpiration
+	b) AbsoluteExpiration
+
+	Best practice is to use AbsoluteExpiration along with Sliding expiration. Use AbsoluteExpirationRelativeToNow with SlidingExpiration
+
+11) PostEvictionCallBack is a call back which is firect after a cache is removed from the cache. 
+
+12)
