@@ -31,5 +31,3 @@
 	Best practice is to use AbsoluteExpiration along with Sliding expiration. Use AbsoluteExpirationRelativeToNow with SlidingExpiration
 
 11) PostEvictionCallBack is a call back which is firect after a cache is removed from the cache. 
-
-12)
